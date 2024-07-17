@@ -80,14 +80,23 @@ After completing the setup, you will be greeted with the Jenkins welcome page. J
 Insert screenshots here to illustrate the steps:
 
 1. **Security Group Configuration:**
+   
    <img width="1208" alt="image" src="https://github.com/user-attachments/assets/554d24d0-6f79-4404-be0b-9a1811fb03eb">
-2. **Log in to the EC2 instance from Git Bash:**
+   
+3. **Log in to the EC2 instance from Git Bash:**
+   
     <img width="483" alt="image" src="https://github.com/user-attachments/assets/9aa7fc73-67c7-4ea2-84ad-eaf615e9a397">
-3. **Check if the jenkins service is running:**
+    
+5. **Check if the jenkins service is running:**
+   
     <img width="635" alt="image" src="https://github.com/user-attachments/assets/6bd282d5-629e-4bcd-961b-27f9d0a3da2b">
-5. **Jenkins Setup Page:**
+    
+7. **Jenkins Setup Page:**
+   
     <img width="640" alt="image" src="https://github.com/user-attachments/assets/0b2327d9-6df7-4c7d-99c0-a40737a689f4">
-6. **Welcome to Jenkins:**
+    
+9. **Welcome to Jenkins:**
+    
     <img width="1280" alt="image" src="https://github.com/user-attachments/assets/81d1c184-32f4-4dc0-8edf-3eaeab1fd941">
 
 ## Conclusion
