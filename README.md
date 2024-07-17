@@ -24,6 +24,7 @@ Before starting, ensure you have the following:
 
 ### 3. User Data Script
 
+This script automates the entire setup process of Jenkins, ensuring that all necessary packages are installed and configured without requiring manual intervention. By using this script in the user data field when launching an EC2 instance, Jenkins is ready to use as soon as the instance is up and running.
 Add the following user data script during the instance creation to automate the Jenkins setup:
 
 ```bash
@@ -42,6 +43,16 @@ https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
 sudo apt-get update
 sudo apt-get install jenkins -y
 ```
+Script Explanation:
+- Shebang (#!/bin/bash): Specifies the script interpreter as bash.
+- Update Package Lists (sudo apt update): Ensures the latest information on the newest versions of packages and their dependencies is available.
+- Install OpenJDK 11 (sudo apt install openjdk-11-jdk -y): Installs Java Development Kit 11, which is required to run Jenkins, with automatic confirmation.
+- Download Jenkins Key (curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee /usr/share/keyrings/jenkins-keyring.asc > /dev/null): Downloads and adds the Jenkins package signing key to the system’s keyring for package verification.
+- Add Jenkins Repository (echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] https://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list > /dev/null): Adds the Jenkins repository to the system's software sources list to allow Jenkins installation using the package manager.
+- Update Package Lists Again (sudo apt-get update): Refreshes the package lists to include the newly added Jenkins repository.
+- Install Jenkins (sudo apt-get install jenkins -y): Installs Jenkins with automatic confirmation.
+
+This script has been created based on Jenkins documentation.
 
 ### 4. Connect to Your Instance
 
